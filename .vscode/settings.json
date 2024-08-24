@@ -51,5 +51,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Geometry Slash.sln"
+    "dotnet.defaultSolution": "Geometry Slash.sln",
+    "git.ignoreLimitWarning": true
 }
