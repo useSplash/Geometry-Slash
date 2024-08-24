@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2349839}
   - component: {fileID: 2349840}
+  - component: {fileID: 2349841}
   m_Layer: 0
   m_Name: Sword_Charge_Hit3
   m_TagString: Untagged
@@ -176,6 +177,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.38, y: 1, z: 4.19}
   m_Center: {x: 1.46, y: 0, z: 0}
+--- !u!114 &2349841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2349838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 0
 --- !u!1 &64968041
 GameObject:
   m_ObjectHideFlags: 0
@@ -20670,6 +20686,7 @@ GameObject:
   m_Component:
   - component: {fileID: 603388007}
   - component: {fileID: 603388008}
+  - component: {fileID: 603388009}
   m_Layer: 0
   m_Name: Sword_Attack3
   m_TagString: Untagged
@@ -20713,6 +20730,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.5, y: 1, z: 1.6}
   m_Center: {x: 1.4, y: 0, z: 0}
+--- !u!114 &603388009
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 603388006}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 0
 --- !u!1 &612854015
 GameObject:
   m_ObjectHideFlags: 0
@@ -31006,6 +31038,38 @@ Transform:
   - {fileID: 401440482}
   m_Father: {fileID: 1519248123}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!1 &985226911
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 985226912}
+  m_Layer: 0
+  m_Name: Hitboxes
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &985226912
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 985226911}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1026861027}
+  m_Father: {fileID: 1519248123}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1002904626
 GameObject:
   m_ObjectHideFlags: 0
@@ -36000,6 +36064,75 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!1 &1026861026
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1026861027}
+  - component: {fileID: 1026861029}
+  - component: {fileID: 1026861028}
+  m_Layer: 0
+  m_Name: Punch
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &1026861027
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026861026}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 985226912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1026861028
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026861026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 1
+  type: 1
+  amount: 0
+--- !u!65 &1026861029
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1026861026}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 2.67, y: 1, z: 1.27}
+  m_Center: {x: -1.3, y: 0, z: 0}
 --- !u!1 &1117266097
 GameObject:
   m_ObjectHideFlags: 0
@@ -50781,6 +50914,8 @@ GameObject:
   - component: {fileID: 1270239454}
   - component: {fileID: 1270239457}
   - component: {fileID: 1270239456}
+  - component: {fileID: 1270239459}
+  - component: {fileID: 1270239458}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -50982,6 +51117,39 @@ MonoBehaviour:
   swordComboHit1: {fileID: 1304217351}
   swordComboHit2: {fileID: 719664748}
   swordComboHit3: {fileID: 794747075}
+--- !u!114 &1270239458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270239446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f0b39da5adc01c4dbd89b0145f85440, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meshList:
+  - {fileID: 1300995930}
+  - {fileID: 493300757}
+  - {fileID: 410505384}
+--- !u!114 &1270239459
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270239446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 823eb55baf5b08f4eaf6da533a28a622, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageSources: 01000000
+  pSystem: {fileID: 0}
+  audSource1: {fileID: 0}
+  audSource2: {fileID: 0}
+  audSource3: {fileID: 0}
 --- !u!1 &1300995927
 GameObject:
   m_ObjectHideFlags: 0
@@ -51390,6 +51558,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1432006790}
   - component: {fileID: 1432006791}
+  - component: {fileID: 1432006792}
   m_Layer: 0
   m_Name: Sword_Attack2
   m_TagString: Untagged
@@ -51433,6 +51602,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0.7, y: 0, z: 0}
+--- !u!114 &1432006792
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1432006789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 0
 --- !u!1 &1494615948
 GameObject:
   m_ObjectHideFlags: 0
@@ -51443,6 +51627,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1494615949}
   - component: {fileID: 1494615950}
+  - component: {fileID: 1494615951}
   m_Layer: 0
   m_Name: Sword_Attack1
   m_TagString: Untagged
@@ -51486,6 +51671,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4, y: 1, z: 4}
   m_Center: {x: 0.7, y: 0, z: 0}
+--- !u!114 &1494615951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1494615948}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 10
 --- !u!1 &1519248121
 GameObject:
   m_ObjectHideFlags: 0
@@ -51546,6 +51746,7 @@ Transform:
   - {fileID: 1118611235}
   - {fileID: 892821518}
   - {fileID: 1615623335}
+  - {fileID: 985226912}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &1519248124
@@ -51624,6 +51825,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823eb55baf5b08f4eaf6da533a28a622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSources: 00000000
   pSystem: {fileID: 892821516}
   audSource1: {fileID: 2061361020}
   audSource2: {fileID: 1861849150}
@@ -51672,6 +51874,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1570420271}
   - component: {fileID: 1570420272}
+  - component: {fileID: 1570420273}
   m_Layer: 0
   m_Name: Sword_Charge_Hit2
   m_TagString: Untagged
@@ -51715,6 +51918,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.77, y: 1, z: 3.65}
   m_Center: {x: 1.68, y: 0, z: 0}
+--- !u!114 &1570420273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1570420270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 0
 --- !u!1 &1615623334
 GameObject:
   m_ObjectHideFlags: 0
@@ -61640,6 +61858,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1932342964}
   - component: {fileID: 1932342965}
+  - component: {fileID: 1932342966}
   m_Layer: 0
   m_Name: Sword_Charge_Hit1
   m_TagString: Untagged
@@ -61683,6 +61902,21 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.89, y: 1, z: 3.03}
   m_Center: {x: 1.47, y: 0, z: 0}
+--- !u!114 &1932342966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1932342963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 439c46059f85a41439a4b437ac3713d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  source: 0
+  type: 0
+  amount: 0
 --- !u!1 &1955505671
 GameObject:
   m_ObjectHideFlags: 0
@@ -61717,6 +61951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823eb55baf5b08f4eaf6da533a28a622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damageSources: 
   pSystem: {fileID: 1647828735}
   audSource1: {fileID: 1170042243}
   audSource2: {fileID: 2053548096}
