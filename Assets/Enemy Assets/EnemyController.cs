@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public float moveSpeed;
     [SerializeField] public float attackCD;
     [HideInInspector] public float attackTimer;
+    Vector3 chargeDirection;
 
     // Start is called before the first frame update
     void Start()
@@ -62,8 +63,20 @@ public class EnemyController : MonoBehaviour
                     * Time.deltaTime;
     }
 
+    public void SetChargeDirection(){
+        chargeDirection = HelperFunctions.FlatDirection(this.transform.position, 
+                                                        player.transform.position);
+    }
+
     public void Charge(){
 
         // Charge at target direction
+        rb.velocity = new Vector3(chargeDirection.x, 0, chargeDirection.y)
+                    * -5000f
+                    * Time.deltaTime;
+    }
+
+    public void Stop(){
+        rb.velocity = Vector3.zero;
     }
 }

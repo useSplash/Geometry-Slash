@@ -6,6 +6,8 @@ public class EnemyAttackingState : EnemyBaseState
     public override void EnterState(EnemyStateManager sm) {
         Debug.Log("Attacking");
         sm.enemyController.anim.SetBool("Attacking", true);
+        sm.enemyController.SetChargeDirection();
+        sm.enemyController.rb.velocity = Vector3.zero;
     }
 
     // Do in this state
@@ -22,8 +24,6 @@ public class EnemyAttackingState : EnemyBaseState
             
             sm.enemyController.anim.SetBool("Attacking", false);
         }
-
-        sm.enemyController.rb.velocity = Vector3.zero;
     }
 
     // Do when transitioning to another state
