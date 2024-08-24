@@ -14,4 +14,12 @@ public class HelperFunctions
 
         return new Vector2(newX, newY);
     }
+
+    public static float FlatDistance(Vector3 v1, Vector3 v2) {
+        return Vector2.Distance(new Vector2(v1.x, v1.z), new Vector2(v2.x, v2.z));
+    }
+
+    public static Vector2 FlatDirection(Vector3 v1, Vector3 v2) {
+        return new Vector2(v1.x - v2.x, v1.z - v2.z).normalized;
+    }
 }

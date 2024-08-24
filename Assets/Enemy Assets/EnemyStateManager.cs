@@ -6,12 +6,15 @@ public class EnemyStateManager : MonoBehaviour
 {
     [HideInInspector]
     public EnemyController enemyController;
-
     public EnemyBaseState currentState;
+    public EnemyBaseState attackingState;
+
     public EnemyBaseState StartState;
 
     public EnemyIdleState IdleState = new EnemyIdleState();
     public EnemyChaseState ChaseState = new EnemyChaseState();
+    public EnemyAttackingState AttackingState = new EnemyAttackingState();
+    public EnemyReadyState ReadyState = new EnemyReadyState();
 
     // Start is called before the first frame update
     void Start()

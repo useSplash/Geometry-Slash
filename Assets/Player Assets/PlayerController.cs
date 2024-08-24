@@ -6,15 +6,15 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     PlayerInput playerInput;
-    public InputAction moveAction;
-    public InputAction dashAction;
-    public InputAction swordattackAction;
-    public Rigidbody playerRB;
+    [HideInInspector] public InputAction moveAction;
+    [HideInInspector] public InputAction dashAction;
+    [HideInInspector] public InputAction swordattackAction;
+    [HideInInspector] public Rigidbody playerRB;
     PlayerStateManager playerSM;
-    public Animator playerAnimator;
+    [HideInInspector] public Animator playerAnimator;
     public Camera playerCamera;
     AnimatorClipInfo[] animatorInfo;
-    public string currentAnimation;
+    [HideInInspector] public string currentAnimation;
 
     [SerializeField]
     public float movementSpeed;
@@ -71,11 +71,11 @@ public class PlayerController : MonoBehaviour
         Vector2 direction = new Vector2(directionX, directionY).normalized;
         float facingDirection = Vector2.SignedAngle(direction, Vector2.right);
         
-        var rotationVector = playerSM.playerController.transform.rotation.eulerAngles;
+        var rotationVector = transform.rotation.eulerAngles;
         rotationVector.y = facingDirection - 135f;
         Quaternion target = Quaternion.Euler(rotationVector);
         
-        playerSM.playerController.ChangeFacingDirection(target, 0);
+        ChangeFacingDirection(target, 0);
     }
 
     // If the corresponding input was triggered

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStateManager : MonoBehaviour
 {
+    [HideInInspector] 
     public PlayerController playerController;
 
     PlayerBaseState currentState;
