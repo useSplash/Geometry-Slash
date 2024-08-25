@@ -23,8 +23,18 @@ public class EnemyReadyState : EnemyBaseState
             sm.SwitchState(sm.ChaseState);
         }
 
+        if (HelperFunctions.FlatDistance(sm.enemyController.transform.position
+                                        , sm.enemyController.player.transform.position)
+                                        < 2.0f) {
+
+            sm.enemyController.MoveToTarget(sm.enemyController.player.transform.position,
+                                        -sm.enemyController.moveSpeed);
+        }
+        else {
+            sm.enemyController.rb.velocity = Vector3.zero;
+        }
+
         sm.enemyController.FaceTarget(sm.enemyController.player.transform.position);
-        sm.enemyController.rb.velocity = Vector3.zero;
     }
 
     // Do when transitioning to another state
