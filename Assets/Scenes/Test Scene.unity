@@ -10435,7 +10435,7 @@ Camera:
   m_ShutterSpeed: 0.005
   m_Aperture: 16
   m_FocusDistance: 10
-  m_FocalLength: 50
+  m_FocalLength: 68.05538
   m_BladeCount: 5
   m_Curvature: {x: 2, y: 11}
   m_BarrelClipping: 0.25
@@ -10450,8 +10450,8 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 66
-  orthographic: 1
+  field of view: 20
+  orthographic: 0
   orthographic size: 6
   m_Depth: -1
   m_CullingMask:
@@ -36291,8 +36291,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.6, y: 1, z: 1.19}
-  m_Center: {x: -1.31, y: 0, z: 0}
+  m_Size: {x: 1.6, y: 1, z: 0.61}
+  m_Center: {x: -1.19, y: 0, z: 0.17}
 --- !u!1 &1117266097
 GameObject:
   m_ObjectHideFlags: 0
@@ -46126,7 +46126,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f187bf24ff11b14e9dcd52d1f7dae8b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.5
+  m_Volume: 0.2
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -56550,8 +56550,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 0e181c9669535074db7878dc5ce4b831, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
-  m_Pitch: 0
+  m_Volume: 0.5
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -67223,7 +67223,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 4f187bf24ff11b14e9dcd52d1f7dae8b, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 2.5
   Loop: 0
   Mute: 0
@@ -67418,7 +67418,7 @@ AudioSource:
   m_audioClip: {fileID: 8300000, guid: 0e181c9669535074db7878dc5ce4b831, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 0.1
-  m_Pitch: 0
+  m_Pitch: 1.2
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -67911,10 +67911,10 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: ec521b3f614869444b32f89028e8a08b, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 0.1
-  m_Pitch: 0
+  m_Pitch: 1
   Loop: 0
   Mute: 0
   Spatialize: 0

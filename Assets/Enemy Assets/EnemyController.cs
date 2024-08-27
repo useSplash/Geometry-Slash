@@ -71,12 +71,15 @@ public class EnemyController : MonoBehaviour
     public void Charge(){
 
         // Charge at target direction
+        StartCoroutine(ChargeDash());
+    }
+
+    IEnumerator ChargeDash(){
+        // Charge at target direction
         rb.velocity = new Vector3(chargeDirection.x, 0, chargeDirection.y)
                     * -7500f
                     * Time.deltaTime;
-    }
-
-    public void Stop(){
+        yield return new WaitForSeconds(0.1f);
         rb.velocity = Vector3.zero;
     }
 }
