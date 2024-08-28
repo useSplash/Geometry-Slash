@@ -19,4 +19,11 @@ public class Damage : MonoBehaviour
     public DamageSource source;
     public DamageType type;
     public float amount;
+    public Vector2 direction;
+
+    public void SetDirection(Vector2 dir){
+        
+        direction = dir;
+    }
+
 }

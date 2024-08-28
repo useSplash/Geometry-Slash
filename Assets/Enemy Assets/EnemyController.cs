@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
             attackTimer -= Time.deltaTime;
         }
 
+        Debug.Log(GetFacingVector());
     }
 
     public void FaceTarget(Vector3 target){
@@ -63,6 +64,12 @@ public class EnemyController : MonoBehaviour
                     * Time.deltaTime;
     }
 
+    public Vector2 GetFacingVector(){
+
+        float radians = ((transform.localEulerAngles.y + 45) * Mathf.Deg2Rad);
+        return new Vector2(Mathf.Sin(radians), Mathf.Cos(radians));
+    }
+
     public void SetChargeDirection(){
         chargeDirection = HelperFunctions.FlatDirection(this.transform.position, 
                                                         player.transform.position);
@@ -71,15 +78,13 @@ public class EnemyController : MonoBehaviour
     public void Charge(){
 
         // Charge at target direction
-        StartCoroutine(ChargeDash());
-    }
-
-    IEnumerator ChargeDash(){
-        // Charge at target direction
         rb.velocity = new Vector3(chargeDirection.x, 0, chargeDirection.y)
                     * -7500f
                     * Time.deltaTime;
-        yield return new WaitForSeconds(0.1f);
+        Invoke("Stop", 0.07f);
+    }
+
+    public void Stop(){
         rb.velocity = Vector3.zero;
     }
 }

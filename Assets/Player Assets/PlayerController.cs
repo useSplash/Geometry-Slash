@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("Attack Command", 
             IsPressed(swordattackAction));
+
     }
     
     // Change facing direction of player, 
@@ -76,6 +78,12 @@ public class PlayerController : MonoBehaviour
         Quaternion target = Quaternion.Euler(rotationVector);
         
         ChangeFacingDirection(target, 0);
+    }
+
+    public Vector2 GetFacingVector(){
+
+        float radians = ((transform.localEulerAngles.y + 45) * Mathf.Deg2Rad);
+        return new Vector2(Mathf.Sin(radians), Mathf.Cos(radians));
     }
 
     // If the corresponding input was triggered

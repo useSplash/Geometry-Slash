@@ -63,14 +63,25 @@ public class Damageable : MonoBehaviour
                 }
             }
 
-            OnDamageTrigger();
+            // Player
+            if (collider.GetComponent<PlayerStateManager>()){
+                if (collider.GetComponent<Damage>().type == DamageType.heavy){
+                    
+                    // Do smthn
+                }
+            }
+
+            // Enemy
+            if (collider.GetComponent<EnemyStateManager>()){
+                if (collider.GetComponent<Damage>().type == DamageType.heavy){
+                    
+                    // Do smthn
+                }
+            }
         }
     }
-
-    public void OnDamageTrigger(){
-        // To activate
-    }
     
+    // Slows Timescale on Impact
     IEnumerator DamageDelay(float duration){
         Time.timeScale = 0.0f;
         yield return new WaitForSecondsRealtime(duration);
