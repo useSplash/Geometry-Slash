@@ -4,7 +4,7 @@ public class EnemyAttackingState : EnemyBaseState
 {
     // Do when entering this state
     public override void EnterState(EnemyStateManager sm) {
-        Debug.Log("Attacking");
+        // Debug.Log("Attacking");
         sm.enemyController.anim.SetBool("Attacking", true);
         sm.enemyController.SetChargeDirection();
         sm.enemyController.rb.velocity = Vector3.zero;

@@ -15,6 +15,7 @@ public class EnemyStateManager : MonoBehaviour
     public EnemyChaseState ChaseState = new EnemyChaseState();
     public EnemyAttackingState AttackingState = new EnemyAttackingState();
     public EnemyReadyState ReadyState = new EnemyReadyState();
+    public EnemyFlinchState FlinchState = new EnemyFlinchState();
 
     // Start is called before the first frame update
     void Start()
@@ -36,5 +37,15 @@ public class EnemyStateManager : MonoBehaviour
         currentState.ExitState(this);
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void Flinch(){
+        if (currentState != AttackingState) {
+            SwitchState(FlinchState);
+        }
+    }
+
+    public void SetFlinchDirection(Vector2 dir){
+        FlinchState.flinchDirection = dir;
     }
 }

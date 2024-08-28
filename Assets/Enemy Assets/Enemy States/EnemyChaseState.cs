@@ -4,7 +4,7 @@ public class EnemyChaseState : EnemyBaseState
 {
     // Do when entering this state
     public override void EnterState(EnemyStateManager sm) {
-        Debug.Log("Chase");
+        // Debug.Log("Chase");
         sm.enemyController.anim.SetBool("Chasing", true);
     }
 

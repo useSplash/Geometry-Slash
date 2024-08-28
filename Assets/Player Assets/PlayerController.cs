@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
         playerAnimator.SetBool("Attack Command", 
             IsPressed(swordattackAction));
 
+        // Debug.Log(GetFacingVector());
     }
     
     // Change facing direction of player, 
@@ -83,7 +85,9 @@ public class PlayerController : MonoBehaviour
     public Vector2 GetFacingVector(){
 
         float radians = ((transform.localEulerAngles.y + 45) * Mathf.Deg2Rad);
-        return new Vector2(Mathf.Sin(radians), Mathf.Cos(radians));
+        Vector2 facingVector = new Vector2(Mathf.Sin(radians), Mathf.Cos(radians));
+        Debug.Log(facingVector);
+        return facingVector;
     }
 
     // If the corresponding input was triggered
@@ -99,5 +103,18 @@ public class PlayerController : MonoBehaviour
     // If the corresponding input was released
     public bool WasReleased(InputAction action){
         return action.triggered && action.ReadValue<float>() == default;
+    }
+
+    public void Knockback(Vector2 dir){
+
+        // Knocked back at target direction
+        playerRB.velocity = new Vector3(dir.x, 0, dir.y)
+                    * -5000f
+                    * Time.deltaTime;
+        Invoke("Stop", 0.05f);
+    }
+
+    public void Stop(){
+        playerRB.velocity = Vector3.zero;
     }
 }

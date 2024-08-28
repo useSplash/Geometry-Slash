@@ -40,8 +40,6 @@ public class EnemyController : MonoBehaviour
         if (attackTimer > 0) {
             attackTimer -= Time.deltaTime;
         }
-
-        Debug.Log(GetFacingVector());
     }
 
     public void FaceTarget(Vector3 target){
@@ -81,7 +79,16 @@ public class EnemyController : MonoBehaviour
         rb.velocity = new Vector3(chargeDirection.x, 0, chargeDirection.y)
                     * -7500f
                     * Time.deltaTime;
-        Invoke("Stop", 0.07f);
+        Invoke("Stop", 0.05f);
+    }
+
+    public void Knockback(Vector2 dir){
+
+        // Charge at target direction
+        rb.velocity = new Vector3(dir.x, 0, dir.y)
+                    * -1000f
+                    * Time.deltaTime;
+        Invoke("Stop", 0.05f);
     }
 
     public void Stop(){

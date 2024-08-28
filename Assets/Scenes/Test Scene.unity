@@ -36292,7 +36292,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1.6, y: 1, z: 1.11}
-  m_Center: {x: -1.19, y: 0, z: 0}
+  m_Center: {x: -1.2, y: 0, z: 0}
 --- !u!1 &1117266097
 GameObject:
   m_ObjectHideFlags: 0
@@ -57356,7 +57356,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: 0
-  type: 0
+  type: 1
   amount: 0
 --- !u!1 &1615623334
 GameObject:

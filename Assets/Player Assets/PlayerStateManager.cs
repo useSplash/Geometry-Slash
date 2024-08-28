@@ -14,6 +14,7 @@ public class PlayerStateManager : MonoBehaviour
     public PlayerDashingState DashingState = new PlayerDashingState();
     public PlayerSwordAttackingState SwordAttackingState = new PlayerSwordAttackingState();
     public PlayerSwordChargingState SwordChargingState = new PlayerSwordChargingState();
+    public PlayerFlinchState FlinchState = new PlayerFlinchState();
 
     // Start is called before the first frame update
     void Start()
@@ -39,5 +40,15 @@ public class PlayerStateManager : MonoBehaviour
         currentState.ExitState(this);
         currentState = state;
         state.EnterState(this);
+    }
+
+    public void Flinch(){
+        if (currentState != DashingState) {
+            SwitchState(FlinchState);
+        }
+    }
+
+    public void SetFlinchDirection(Vector2 dir){
+        FlinchState.flinchDirection = -dir;
     }
 }

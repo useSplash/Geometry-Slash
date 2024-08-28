@@ -4,7 +4,7 @@ public class EnemyReadyState : EnemyBaseState
 {
     // Do when entering this state
     public override void EnterState(EnemyStateManager sm) {
-        Debug.Log("Ready");
+        // Debug.Log("Ready");
         sm.enemyController.anim.SetBool("Ready", true);
     }
 
@@ -39,6 +39,6 @@ public class EnemyReadyState : EnemyBaseState
 
     // Do when transitioning to another state
     public override void ExitState(EnemyStateManager sm) {
-
+        sm.enemyController.anim.SetBool("Ready", false);
     }
 }

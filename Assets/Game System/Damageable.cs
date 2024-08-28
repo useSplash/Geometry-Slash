@@ -34,14 +34,19 @@ public class Damageable : MonoBehaviour
         if (!collider.GetComponent<Damage>()) {
             return;
         }
-        
+
         if (damageSources.Contains(collider.GetComponent<Damage>().source)) {
+            
+            // Damage Flash
             if (GetComponent<DamageFlash>()) {
                 GetComponent<DamageFlash>().FlashStart(Color.red, 0.15f);
             }
+            // Particle
             if (pSystem) {
                 pSystem.Play();
             }
+
+            // Audio
             if (audSource1) {
                 audSource1.pitch = Random.Range(pitch1 - 0.05f, pitch1 + 0.05f);
                 audSource1.Play();
@@ -54,6 +59,8 @@ public class Damageable : MonoBehaviour
                 audSource3.pitch = Random.Range(pitch3 - 0.05f, pitch3 + 0.05f);
                 audSource3.Play();
             }
+
+            // Impact Delay
             if (enableImpactDelay) {
                 if (collider.GetComponent<Damage>().type == DamageType.light){
                     StartCoroutine(DamageDelay(0.02f));
@@ -64,18 +71,24 @@ public class Damageable : MonoBehaviour
             }
 
             // Player
-            if (collider.GetComponent<PlayerStateManager>()){
+            if (this.GetComponent<PlayerStateManager>()){
                 if (collider.GetComponent<Damage>().type == DamageType.heavy){
-                    
-                    // Do smthn
+
+                    this.GetComponent<PlayerStateManager>().SetFlinchDirection(
+                        collider.GetComponent<Damage>().GetFacingDirection()
+                        );
+                    this.GetComponent<PlayerStateManager>().Flinch();
                 }
             }
 
             // Enemy
-            if (collider.GetComponent<EnemyStateManager>()){
+            if (this.GetComponent<EnemyStateManager>()){
                 if (collider.GetComponent<Damage>().type == DamageType.heavy){
                     
-                    // Do smthn
+                    this.GetComponent<EnemyStateManager>().SetFlinchDirection(
+                        collider.GetComponent<Damage>().GetFacingDirection()
+                        );
+                    this.GetComponent<EnemyStateManager>().Flinch();
                 }
             }
         }
