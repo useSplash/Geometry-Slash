@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.Sqlite;
 using UnityEngine;
 
 public class EnemyController : MonoBehaviour
@@ -18,6 +19,7 @@ public class EnemyController : MonoBehaviour
     [SerializeField] public float attackCD;
     [HideInInspector] public float attackTimer;
     Vector3 chargeDirection;
+    public bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +36,15 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GetComponent<Health>()){
+            if (GetComponent<Health>().currHP <= 0 && !isDead){
+                Death();
+            }
+        }
+
+        if (isDead) return;
+
         animInfo = anim.GetCurrentAnimatorClipInfo(0);
         currAnim = animInfo[0].clip.name;
 
@@ -93,5 +104,12 @@ public class EnemyController : MonoBehaviour
 
     public void Stop(){
         rb.velocity = Vector3.zero;
+    }
+
+    public void Death(){
+        isDead = true;
+        anim.SetBool("Hurt", false);
+        FaceTarget(player.transform.position);
+        anim.Play("Enemy_Melee_Death");
     }
 }

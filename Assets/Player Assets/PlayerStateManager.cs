@@ -29,6 +29,7 @@ public class PlayerStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (playerController.isDead) return;
         currentState.UpdateState(this);
     }
 
@@ -43,6 +44,7 @@ public class PlayerStateManager : MonoBehaviour
     }
 
     public void Flinch(){
+        if (playerController.isDead) return;
         if (currentState != DashingState) {
             SwitchState(FlinchState);
         }

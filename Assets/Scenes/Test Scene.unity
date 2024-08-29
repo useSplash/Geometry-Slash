@@ -191,7 +191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 1
-  amount: 0
+  amount: 30
 --- !u!1 &64968041
 GameObject:
   m_ObjectHideFlags: 0
@@ -5115,7 +5115,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -10450,7 +10450,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20
+  field of view: 15
   orthographic: 0
   orthographic size: 6
   m_Depth: -1
@@ -10539,8 +10539,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a990d9ff1d972fc4fa1dcabc95a38f2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  offset: {x: -20, y: 16.5, z: -20}
   target: {fileID: 1270239450}
-  smoothTime: 0.01
+  smoothTime: 0.1
+  zoomSize: 15
+  smoothZoomTime: 0.05
 --- !u!1 &400942841
 GameObject:
   m_ObjectHideFlags: 0
@@ -20765,7 +20768,7 @@ BoxCollider:
     m_Bits: 0
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
-  m_ProvidesContacts: 0
+  m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
@@ -20904,7 +20907,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 1
-  amount: 0
+  amount: 10
 --- !u!1 &612854015
 GameObject:
   m_ObjectHideFlags: 0
@@ -36271,7 +36274,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 1
   type: 1
-  amount: 0
+  amount: 25
 --- !u!65 &1026861029
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -56034,6 +56037,7 @@ GameObject:
   - component: {fileID: 1270239456}
   - component: {fileID: 1270239459}
   - component: {fileID: 1270239458}
+  - component: {fileID: 1270239460}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -56071,7 +56075,7 @@ Transform:
   m_GameObject: {fileID: 1270239446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.55, z: -1.06}
+  m_LocalPosition: {x: 0, y: 0.55, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -56156,6 +56160,7 @@ MonoBehaviour:
   movementSpeed: 4
   dashSpeed: 20
   dashDuration: 0.15
+  isDead: 0
 --- !u!114 &1270239454
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -56270,6 +56275,20 @@ MonoBehaviour:
   audSource1: {fileID: 1318144003}
   audSource2: {fileID: 0}
   audSource3: {fileID: 0}
+--- !u!114 &1270239460
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1270239446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1aff1399be0e44d925ee08d6aeeb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 25
+  currHP: 0
 --- !u!1 &1300995927
 GameObject:
   m_ObjectHideFlags: 0
@@ -56897,7 +56916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 0
-  amount: 0
+  amount: 5
 --- !u!1 &1494615948
 GameObject:
   m_ObjectHideFlags: 0
@@ -56966,7 +56985,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 0
-  amount: 10
+  amount: 5
 --- !u!1 &1519248121
 GameObject:
   m_ObjectHideFlags: 0
@@ -56984,6 +57003,7 @@ GameObject:
   - component: {fileID: 1519248129}
   - component: {fileID: 1519248128}
   - component: {fileID: 1519248130}
+  - component: {fileID: 1519248131}
   m_Layer: 0
   m_Name: Enemy (Melee)
   m_TagString: Untagged
@@ -57021,7 +57041,7 @@ Transform:
   m_GameObject: {fileID: 1519248121}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.14, y: 0.75, z: 1.58}
+  m_LocalPosition: {x: 2.31, y: 0.75, z: 1.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -57147,6 +57167,7 @@ MonoBehaviour:
   moveSpeed: 5
   attackCD: 5
   attackTimer: 0
+  isDead: 0
 --- !u!114 &1519248130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57161,6 +57182,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   windup: {fileID: 1776897749}
   release: {fileID: 1168850375}
+--- !u!114 &1519248131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1519248121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c1aff1399be0e44d925ee08d6aeeb8a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHP: 20
+  currHP: 0
 --- !u!1 &1564349661
 GameObject:
   m_ObjectHideFlags: 0
@@ -57357,7 +57392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 1
-  amount: 0
+  amount: 10
 --- !u!1 &1615623334
 GameObject:
   m_ObjectHideFlags: 0
@@ -67569,7 +67604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: 0
   type: 0
-  amount: 0
+  amount: 5
 --- !u!1 &1955505671
 GameObject:
   m_ObjectHideFlags: 0

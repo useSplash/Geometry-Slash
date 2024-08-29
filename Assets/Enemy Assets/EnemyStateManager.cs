@@ -30,6 +30,7 @@ public class EnemyStateManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (enemyController.isDead) return;
         currentState.UpdateState(this);
     }
 
@@ -40,6 +41,7 @@ public class EnemyStateManager : MonoBehaviour
     }
 
     public void Flinch(){
+        if (enemyController.isDead) return;
         if (currentState != AttackingState) {
             SwitchState(FlinchState);
         }

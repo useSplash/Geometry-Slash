@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public float dashSpeed;
     [SerializeField]
     public float dashDuration;
+    public bool isDead;
 
     // Start is called before the first frame update
     void Start()
@@ -42,8 +43,21 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (GetComponent<Health>()){
+            if (GetComponent<Health>().currHP <= 0 && !isDead){
+                Death();
+            }
+        }
+
+        if (isDead) {
+            Time.timeScale = 0.2f;
+            return;
+        }
+
         animatorInfo = playerAnimator.GetCurrentAnimatorClipInfo(0);
         currentAnimation = animatorInfo[0].clip.name;
+
         // Debug.Log(currentAnimation);
 
         playerAnimator.SetFloat("Move Input", 
@@ -51,8 +65,6 @@ public class PlayerController : MonoBehaviour
         
         playerAnimator.SetBool("Attack Command", 
             IsPressed(swordattackAction));
-
-        // Debug.Log(GetFacingVector());
     }
     
     // Change facing direction of player, 
@@ -116,5 +128,13 @@ public class PlayerController : MonoBehaviour
 
     public void Stop(){
         playerRB.velocity = Vector3.zero;
+    }
+
+    public void Death(){
+        isDead = true;
+        playerAnimator.SetBool("Hurt", false);
+        playerInput.actions.Disable();
+        playerCamera.GetComponent<CameraFollow>().ChangeZoom(10.0f);
+        playerAnimator.Play("Player_Sword_Death");
     }
 }

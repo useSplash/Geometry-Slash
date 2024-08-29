@@ -91,6 +91,11 @@ public class Damageable : MonoBehaviour
                     this.GetComponent<EnemyStateManager>().Flinch();
                 }
             }
+
+            // Take Damage
+            if (this.GetComponent<Health>()){
+                this.GetComponent<Health>().DecreaseHP(collider.GetComponent<Damage>().amount);
+            }
         }
     }
     
