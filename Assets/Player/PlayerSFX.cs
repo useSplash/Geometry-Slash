@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerSFX : MonoBehaviour
 {
-    public AudioSource swordComboHit1;
-    public AudioSource swordComboHit2;
-    public AudioSource swordComboHit3;
+    AudioManager audioManager;
+
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void PlaySwordComboHit1(){
-        if (swordComboHit1) {
-            swordComboHit1.Play();
+        if (audioManager) {
+            audioManager.PlaySFX(audioManager.lightHit1SFX, 0.2f, 2.5f);
         }
         else {
             Debug.Log("No Sound File");
@@ -18,8 +20,8 @@ public class PlayerSFX : MonoBehaviour
     }
 
     public void PlaySwordComboHit2(){
-        if (swordComboHit2) {
-            swordComboHit2.Play();
+        if (audioManager) {
+            audioManager.PlaySFX(audioManager.lightHit2SFX, 0.2f, 1.0f);
         }
         else {
             Debug.Log("No Sound File");
@@ -27,8 +29,8 @@ public class PlayerSFX : MonoBehaviour
     }
 
     public void PlaySwordComboHit3(){
-        if (swordComboHit3) {
-            swordComboHit3.Play();
+        if (audioManager) {
+            audioManager.PlaySFX(audioManager.heavyHit1SFX, 0.35f, 2.5f);
         }
         else {
             Debug.Log("No Sound File");

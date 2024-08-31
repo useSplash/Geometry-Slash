@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class EnemySFX : MonoBehaviour
 {
-    public AudioSource windup;
-    public AudioSource release;
+    AudioManager audioManager;
+    public AudioClip windup;
+    public AudioClip release;
+
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
 
     public void PlayWindup(){
         if (windup) {
-            windup.Play();
+            audioManager.PlaySFX(windup, 0.2f, 2.5f);
         }
         else {
             Debug.Log("No Sound File");
@@ -18,7 +23,7 @@ public class EnemySFX : MonoBehaviour
 
     public void PlayRelease(){
         if (release) {
-            release.Play();
+            audioManager.PlaySFX(release, 0.5f, 1.0f);
         }
         else {
             Debug.Log("No Sound File");

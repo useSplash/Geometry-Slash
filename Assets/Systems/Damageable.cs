@@ -10,23 +10,13 @@ public class Damageable : MonoBehaviour
     [Header("Hit Effect Settings")]
     public bool enableImpactDelay;
     public ParticleSystem pSystem;
-    public AudioSource audSource1;
-    float pitch1;
-    public AudioSource audSource2;
-    float pitch2;
-    public AudioSource audSource3;
-    float pitch3;
+    AudioManager audioManager;
+    public AudioClip audSource1;
+    public AudioClip audSource2;
+    public AudioClip audSource3;
 
-    void Start(){
-        if (audSource1) {
-            pitch1 = audSource1.pitch;
-        }
-        if (audSource2) {
-            pitch2 = audSource2.pitch;
-        }
-        if (audSource3) {
-            pitch3 = audSource3.pitch;
-        }
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
     }
 
     protected virtual void OnTriggerEnter(Collider collider) {
@@ -47,17 +37,17 @@ public class Damageable : MonoBehaviour
             }
 
             // Audio
-            if (audSource1) {
-                audSource1.pitch = Random.Range(pitch1 - 0.05f, pitch1 + 0.05f);
-                audSource1.Play();
-            }
-            if (audSource2) {
-                audSource2.pitch = Random.Range(pitch2 - 0.05f, pitch2 + 0.05f);
-                audSource2.Play();
-            }
-            if (audSource3) {
-                audSource3.pitch = Random.Range(pitch3 - 0.05f, pitch3 + 0.05f);
-                audSource3.Play();
+            if (audioManager){
+                float rand = Random.Range(1.05f, 0.95f);
+                if (audSource1) {
+                    audioManager.PlaySFX(audSource1, 0.2f, rand);
+                }
+                if (audSource2) {
+                    audioManager.PlaySFX(audSource2, 0.2f, rand);
+                }
+                if (audSource3) {
+                    audioManager.PlaySFX(audSource3, 0.2f, rand);
+                }
             }
 
             // Impact Delay

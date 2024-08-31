@@ -20,17 +20,15 @@ public class AudioManager : MonoBehaviour
     public AudioClip pixelPew;
     public AudioClip pixelBling;
 
-    private void Start(){
-        PlayMusic(mainTitleBGM);
-    }
-
     public void PlayMusic(AudioClip clip){
         musicSource.clip = clip;
         musicSource.Play();
     }
 
-    public void PlaySFX(AudioClip clip){
+    public void PlaySFX(AudioClip clip, float volume, float pitch){
         SFXSource.clip = clip;
+        SFXSource.pitch = pitch;
+        SFXSource.volume = volume;
         SFXSource.Play();
     }
 }
