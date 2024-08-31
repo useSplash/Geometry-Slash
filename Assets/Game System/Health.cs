@@ -26,4 +26,12 @@ public class Health : MonoBehaviour
             currHP = maxHP;
         }
     }
+
+    public float GetMaxHP(){
+        return maxHP;
+    }
+
+    public float GetCurrHP(){
+        return currHP;
+    }
 }
