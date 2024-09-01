@@ -20,6 +20,18 @@ public class AudioManager : MonoBehaviour
     public AudioClip pixelPew;
     public AudioClip pixelBling;
 
+    AudioManager instance;
+
+    private void Start(){
+        if (instance != null){
+            Destroy(gameObject);
+        }
+        else {
+            instance = this;
+        }
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void PlayMusic(AudioClip clip){
         musicSource.clip = clip;
         musicSource.Play();
