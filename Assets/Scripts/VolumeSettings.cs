@@ -8,6 +8,12 @@ public class VolumeSettings : MonoBehaviour
     [SerializeField] private Slider musicSlider;
     [SerializeField] private Slider SFXSlider;
 
+    AudioManager audioManager;
+
+    private void Awake(){
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+
     private void Start(){
 
         if(PlayerPrefs.HasKey("musicVolume")){
@@ -47,5 +53,9 @@ public class VolumeSettings : MonoBehaviour
         SFXSlider.value = PlayerPrefs.GetFloat("SFXVolume");
 
         SetSFXVolume();
+    }
+
+    public void SFXSliderSound(){
+        audioManager.PlaySFX(audioManager.pixelBling, 1.0f, 1.0f);
     }
 }

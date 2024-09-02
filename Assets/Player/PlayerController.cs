@@ -11,9 +11,9 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public InputAction moveAction;
     [HideInInspector] public InputAction dashAction;
     [HideInInspector] public InputAction swordattackAction;
-    [HideInInspector] public Rigidbody playerRB;
-    PlayerStateManager playerSM;
-    [HideInInspector] public Animator playerAnimator;
+    public Rigidbody playerRB;
+    public Animator playerAnimator;
+    public PlayerStateManager playerSM;
     public Camera playerCamera;
     AnimatorClipInfo[] animatorInfo;
     [HideInInspector] public string currentAnimation;
@@ -34,10 +34,7 @@ public class PlayerController : MonoBehaviour
         moveAction = playerInput.actions.FindAction("Move");
         dashAction = playerInput.actions.FindAction("Dash");
         swordattackAction = playerInput.actions.FindAction("Attack (Sword)");
-
-        playerRB = GetComponent<Rigidbody>();
-        playerSM = GetComponent<PlayerStateManager>();
-        playerAnimator = GetComponent<Animator>();
+        
     }
 
     // Update is called once per frame
@@ -133,6 +130,7 @@ public class PlayerController : MonoBehaviour
     public void Death(){
         isDead = true;
         playerAnimator.SetBool("Hurt", false);
+        Stop();
         playerInput.actions.Disable();
         playerCamera.GetComponent<CameraFollow>().ChangeZoom(10.0f);
         playerAnimator.Play("Player_Sword_Death");
