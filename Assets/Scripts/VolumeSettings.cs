@@ -12,6 +12,19 @@ public class VolumeSettings : MonoBehaviour
 
     private void Awake(){
         audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+        if(PlayerPrefs.HasKey("musicVolume")){
+            LoadMusicVolume();
+        }
+        else{
+            SetMusicVolume();
+        }
+
+        if(PlayerPrefs.HasKey("SFXVolume")){
+            LoadSFXVolume();
+        }
+        else{
+            SetSFXVolume();
+        }
     }
 
     private void Start(){
@@ -56,6 +69,6 @@ public class VolumeSettings : MonoBehaviour
     }
 
     public void SFXSliderSound(){
-        audioManager.PlaySFX(audioManager.pixelBling, 1.0f, 1.0f);
+        audioManager.PlaySFX(audioManager.pixelBling, 0.5f, 1.0f);
     }
 }

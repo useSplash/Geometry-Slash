@@ -187,6 +187,8 @@ MonoBehaviour:
   pixelPew: {fileID: 8300000, guid: 0e181c9669535074db7878dc5ce4b831, type: 3}
   pixelBling: {fileID: 8300000, guid: 2c3f6f14d6a15cf478582baf60cb21c0, type: 3}
   gameOver: {fileID: 8300000, guid: d8c2f4479c0935a45b38d6f22fda808c, type: 3}
+  pause: {fileID: 8300000, guid: 04bfde7bd77e8e54588366964a1284a0, type: 3}
+  unpause: {fileID: 8300000, guid: 0b5e808cf624c0b4d95e59dbda5c4e6b, type: 3}
 --- !u!1 &4317899483101684658
 GameObject:
   m_ObjectHideFlags: 0

@@ -21,6 +21,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip pixelPew;
     public AudioClip pixelBling;
     public AudioClip gameOver;
+    public AudioClip pause;
+    public AudioClip unpause;
 
     static AudioManager instance;
 

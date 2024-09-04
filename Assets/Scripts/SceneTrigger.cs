@@ -8,7 +8,6 @@ public class SceneTrigger : MonoBehaviour
     [SerializeField] int levelIndex;
 
     public void TriggerLoadLevel(){
-        Debug.Log("Do smthn");
         loader.LoadLevel(levelIndex);
     }
 
