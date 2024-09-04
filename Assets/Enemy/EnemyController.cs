@@ -87,7 +87,7 @@ public class EnemyController : MonoBehaviour
 
         // Charge at target direction
         rb.velocity = new Vector3(chargeDirection.x, 0, chargeDirection.y)
-                    * -7500f
+                    * -3000f
                     * Time.deltaTime;
         Invoke("Stop", 0.05f);
     }
