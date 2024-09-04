@@ -25451,6 +25451,7 @@ MonoBehaviour:
   source: 1
   type: 1
   amount: 25
+  hasDirection: 0
 --- !u!65 &1026861029
 BoxCollider:
   m_ObjectHideFlags: 0

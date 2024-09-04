@@ -1,7 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,6 +23,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     public float dashDuration;
     public bool isDead;
+    public float deadTime;
 
     // Start is called before the first frame update
     void Start()
@@ -48,7 +47,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (isDead) {
-            Time.timeScale = 0.2f;
+            Time.timeScale = deadTime;
             return;
         }
 
@@ -128,11 +127,24 @@ public class PlayerController : MonoBehaviour
     }
 
     public void Death(){
+        deadTime = 0.2f;
         isDead = true;
+        AudioManager audio = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();;
+        if (audio){
+            audio.StopMusic();
+            audio.PlaySFX(audio.gameOver, 1.0f, 1.0f);
+        }
         playerAnimator.SetBool("Hurt", false);
         Stop();
         playerInput.actions.Disable();
         playerCamera.GetComponent<CameraFollow>().ChangeZoom(10.0f);
         playerAnimator.Play("Player_Sword_Death");
+        Invoke("GameOver", 1.0f);
+    }
+
+    public void GameOver(){
+        if (GetComponent<SceneTrigger>()){
+            GetComponent<SceneTrigger>().TriggerLoadLevel();
+        }
     }
 }

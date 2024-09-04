@@ -4,11 +4,21 @@ using UnityEngine;
 
 public class MenuManager : MonoBehaviour
 {
+    public CanvasGroup group;
+
+    void Start(){
+        Close();
+    }
+
     public void Open(){
-        gameObject.SetActive(true);
+        group.alpha = 1;
+        group.interactable = true;
+        group.blocksRaycasts = true;
     }
 
     public void Close(){
-        gameObject.SetActive(false);
+        group.alpha = 0;
+        group.interactable = false;
+        group.blocksRaycasts = false;
     }
 }

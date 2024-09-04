@@ -10,6 +10,7 @@ public class AudioManager : MonoBehaviour
 
     [Header("Music")]
     public AudioClip mainTitleBGM;
+    public AudioClip gameOverMusic;
 
     [Header("SFX")]
     public AudioClip lightHit1SFX;
@@ -19,17 +20,18 @@ public class AudioManager : MonoBehaviour
     public AudioClip gameboyPluck;
     public AudioClip pixelPew;
     public AudioClip pixelBling;
+    public AudioClip gameOver;
 
-    AudioManager instance;
+    static AudioManager instance;
 
-    private void Start(){
+    private void Awake(){
         if (instance != null){
             Destroy(gameObject);
         }
         else {
             instance = this;
+            DontDestroyOnLoad(gameObject);
         }
-        DontDestroyOnLoad(gameObject);
     }
 
     public void PlayMusic(AudioClip clip){
@@ -42,5 +44,9 @@ public class AudioManager : MonoBehaviour
         SFXSource.pitch = pitch;
         SFXSource.volume = volume;
         SFXSource.Play();
+    }
+
+    public void StopMusic(){
+        musicSource.Stop();
     }
 }

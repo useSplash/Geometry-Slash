@@ -41,10 +41,11 @@ AudioSource:
   m_GameObject: {fileID: 977448734189610044}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 6243022556088422545, guid: e3e4aabff885d5445b7150f8d4b3de50,
+    type: 2}
+  m_audioClip: {fileID: 8300000, guid: 8b19a567df08e40aa97756bf728db4c1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -177,6 +178,7 @@ MonoBehaviour:
   musicSource: {fileID: 8385378290493650067}
   SFXSource: {fileID: 4191003515926845562}
   mainTitleBGM: {fileID: 8300000, guid: 8b19a567df08e40aa97756bf728db4c1, type: 3}
+  gameOverMusic: {fileID: 8300000, guid: c1277f178239e471f889df6c57370292, type: 3}
   lightHit1SFX: {fileID: 8300000, guid: 63735ac52da30364480d7554a4ab1346, type: 3}
   lightHit2SFX: {fileID: 8300000, guid: 413f0d34d308fda499f82c1cf0fb53a4, type: 3}
   heavyHit1SFX: {fileID: 8300000, guid: 94e9792ff34c1614dbedf6971f7e48aa, type: 3}
@@ -184,6 +186,7 @@ MonoBehaviour:
   gameboyPluck: {fileID: 8300000, guid: ec521b3f614869444b32f89028e8a08b, type: 3}
   pixelPew: {fileID: 8300000, guid: 0e181c9669535074db7878dc5ce4b831, type: 3}
   pixelBling: {fileID: 8300000, guid: 2c3f6f14d6a15cf478582baf60cb21c0, type: 3}
+  gameOver: {fileID: 8300000, guid: d8c2f4479c0935a45b38d6f22fda808c, type: 3}
 --- !u!1 &4317899483101684658
 GameObject:
   m_ObjectHideFlags: 0
@@ -225,7 +228,8 @@ AudioSource:
   m_GameObject: {fileID: 4317899483101684658}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -3529951468633536950, guid: e3e4aabff885d5445b7150f8d4b3de50,
+    type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1

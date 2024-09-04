@@ -10110,6 +10110,7 @@ MonoBehaviour:
   source: 0
   type: 1
   amount: 10
+  hasDirection: 1
 --- !u!1 &2988916308156090623
 GameObject:
   m_ObjectHideFlags: 0
@@ -15009,6 +15010,7 @@ MonoBehaviour:
   source: 0
   type: 1
   amount: 10
+  hasDirection: 1
 --- !u!1 &3432069639473759816
 GameObject:
   m_ObjectHideFlags: 0
@@ -15156,6 +15158,7 @@ GameObject:
   - component: {fileID: 5621987014608699869}
   - component: {fileID: 7959449863700156443}
   - component: {fileID: 142714031679094508}
+  - component: {fileID: 2550312238961353519}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -15369,7 +15372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 823eb55baf5b08f4eaf6da533a28a622, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageSources: 01000000
+  damageSources: 0100000002000000
   enableImpactDelay: 1
   pSystem: {fileID: 0}
   audSource1: {fileID: 8300000, guid: 0e181c9669535074db7878dc5ce4b831, type: 3}
@@ -15406,6 +15409,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 75
   currHP: 0
+--- !u!114 &2550312238961353519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3492838531014899921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f28a0fa8f2530e43bcbc0adc60b73ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  loader: {fileID: 0}
+  levelIndex: 3
 --- !u!1 &3666644177345964406
 GameObject:
   m_ObjectHideFlags: 0
@@ -15475,6 +15492,7 @@ MonoBehaviour:
   source: 0
   type: 1
   amount: 30
+  hasDirection: 1
 --- !u!1 &4089512063267626979
 GameObject:
   m_ObjectHideFlags: 0
@@ -35403,6 +35421,7 @@ MonoBehaviour:
   source: 0
   type: 0
   amount: 5
+  hasDirection: 1
 --- !u!1 &7799652225617988663
 GameObject:
   m_ObjectHideFlags: 0
@@ -35472,6 +35491,7 @@ MonoBehaviour:
   source: 0
   type: 0
   amount: 5
+  hasDirection: 1
 --- !u!1 &8198989364129631818
 GameObject:
   m_ObjectHideFlags: 0
@@ -35541,6 +35561,7 @@ MonoBehaviour:
   source: 0
   type: 0
   amount: 5
+  hasDirection: 1
 --- !u!1 &8382891133312515963
 GameObject:
   m_ObjectHideFlags: 0
